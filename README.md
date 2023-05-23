@@ -1,2 +1,3 @@
 # Unicopia-Bedrock
-The pony powers addon to power in your pony pony pony
+This is the bedrock port of Unicopia
+(In development within Bridge)
