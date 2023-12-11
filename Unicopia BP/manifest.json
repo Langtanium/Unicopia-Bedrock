@@ -1,0 +1,63 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Langtanium"
+		]
+	},
+	"header": {
+		"name": "Unicopia",
+		"description": "The pony powers addon to power in your pony pony pony",
+		"min_engine_version": [
+			1,
+			20,
+			50
+		],
+		"uuid": "9d618eb8-b986-494d-8338-b5710bd91828",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "9d95a572-9005-4453-a10e-33d4c88ec705",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "4d50483f-1d7a-4477-8da3-c98c3fdb8271",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "e92dadc7-7d02-4668-9f66-0d1a7fadbfd7",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.8.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0-beta"
+		}
+	]
+}

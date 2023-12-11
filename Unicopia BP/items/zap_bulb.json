@@ -1,0 +1,58 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "unicopia:zap_bulb",
+      "category": "nature"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "can_always_eat": true,
+        "nutrition": -2,
+        "saturation_modifier": "low",
+        "on_consume": {
+          "event": "unicopia:bad_apple"
+        }
+      },
+      "minecraft:icon": {
+        "texture": "unicopia_zap_bulb"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    },
+    "events": {
+      "unicopia:bad_apple": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "poison",
+              "duration": 100,
+              "amplifier": 1,
+              "target": "other"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "blindness",
+              "duration": 100,
+              "amplifier": 1,
+              "target": "other"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "bad_omen",
+              "duration": 100,
+              "amplifier": 1,
+              "target": "other"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

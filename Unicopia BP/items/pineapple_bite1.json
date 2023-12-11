@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "unicopia:pineapple_bite1",
+      "category": "none"
+    },
+    "components": {
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "low",
+        "using_converts_to": "unicopia:pineapple_bite2"
+      },
+      "minecraft:icon": {
+        "texture": "unicopia_pineapple_bite1"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

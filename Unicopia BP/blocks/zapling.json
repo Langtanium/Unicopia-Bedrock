@@ -1,0 +1,126 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "unicopia:zapling",
+			"menu_category": {
+				"category": "none",
+				"is_hidden_in_commands": true
+			},
+			"properties": {
+				"unicopia:growth": [
+					0,
+					1,
+					2
+				]
+			}
+		},
+		"components": {
+			"tag:plant": {},
+			"minecraft:collision_box": {
+				"origin": [
+					0,
+					0,
+					0
+				],
+				"size": [
+					0,
+					0,
+					0
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-6,
+					0,
+					-6
+				],
+				"size": [
+					12,
+					13,
+					12
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.01
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 0
+			},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"minecraft:dirt",
+							"minecraft:grass",
+							"minecraft:podzol"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			},
+			"minecraft:geometry": "geometry.zapling",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "unicopia_zapling",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:map_color": "#390097",
+			"minecraft:queued_ticking": {
+				"interval_range": [
+					1,
+					1
+				],
+				"on_tick": {
+					"event": "unicopia:grow"
+				}
+			},
+			"minecraft:loot": "loot_tables/blocks/zapling.json",
+			"minecraft:on_interact": {
+				"condition": "q.is_item_name_any('slot.weapon.mainhand','minecraft:bone_meal')",
+				"event": "unicopia:bone_meal"
+			},
+			"minecraft:random_ticking": {
+				"on_tick": {
+					"event": "unicopia:grow"
+				}
+			}
+		},
+		"events": {
+			"unicopia:grow": {
+				"sequence": [
+					{
+						"condition": "q.block_property('unicopia:growth') < 2",
+						"set_block_property": {
+							"unicopia:growth": "q.block_property('unicopia:growth') + 1"
+						}
+					},
+					{
+						"condition": "q.block_property('unicopia:growth') == 2",
+						"randomize": [
+							{
+								"run_command": {
+									"command": "structure load zap_tree_0 ~-2 ~ ~-2"
+								},
+								"weight": 1
+							}
+						]
+					}
+				]
+			},
+			"unicopia:bone_meal": {
+				"decrement_stack": {},
+				"trigger": "unicopia:grow",
+				"run_command": {
+					"command": "particle minecraft:crop_growth_emitter ~~~"
+				}
+			}
+		}
+	}
+}

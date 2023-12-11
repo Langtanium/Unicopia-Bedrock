@@ -1,0 +1,91 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "unicopia:stripped_zap_log",
+			"properties": {
+				"unicopia:axis": [
+					0,
+					1,
+					2
+				]
+			},
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.log"
+			}
+		},
+		"components": {
+			"tag:log": {},
+			"tag:unicopia:stripped_zap_log": {},
+			"tag:polearm": {},
+			"minecraft:unit_cube": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:loot": "loot_tables/blocks/stripped_zap_log.json",
+			"minecraft:on_player_placing": {
+				"event": "unicopia:set_axis"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "unicopia_stripped_zap_log",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "unicopia_stripped_zap_log_top",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "unicopia_stripped_zap_log_top",
+					"render_method": "opaque"
+				}
+			}
+		},
+		"events": {
+			"unicopia:set_axis": {
+				"set_block_property": {
+					"unicopia:axis": "math.floor( query.block_face / 2 )"
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_property('unicopia:axis') == 0",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_property('unicopia:axis') == 1",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_property('unicopia:axis') == 2",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			}
+		]
+	}
+}

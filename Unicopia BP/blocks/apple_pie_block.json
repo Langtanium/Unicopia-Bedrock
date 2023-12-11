@@ -1,0 +1,232 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "unicopia:apple_pie_block",
+      "properties": {
+        "unicopia:bites": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "unicopia:stomped": [
+          0,
+          1
+        ]
+      },
+      "menu_category": {
+        "category": "none",
+        "is_hidden_in_commands": true
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 3
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0.5
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:on_step_on": {
+        "event": "unicopia:stepped_on"
+      },
+      "minecraft:on_fall_on": {
+        "event": "unicopia:stepped_on"
+      },
+      "minecraft:on_interact": {
+        "event": "unicopia:eat"
+      },
+      "minecraft:placement_filter": {
+        "allowed_faces": [
+          "up"
+        ]
+      }
+    },
+    "events": {
+      "unicopia:stepped_on": {
+        "set_block_property": {
+          "unicopia:stomped": 1
+        }
+      },
+      "unicopia:eat": {
+        "sequence": [
+          {
+            "run_command": {
+              "command": "effect @s saturation 1 2 false",
+              "target": "player"
+            }
+          },
+          {
+            "condition": "q.block_property('unicopia:bites') == 0",
+            "set_block_property": {
+              "unicopia:bites": 1
+            }
+          },
+          {
+            "condition": "q.block_property('unicopia:bites') == 1",
+            "set_block_property": {
+              "unicopia:bites": 2
+            }
+          },
+          {
+            "condition": "q.block_property('unicopia:bites') == 2",
+            "set_block_property": {
+              "unicopia:bites": 3
+            }
+          },
+          {
+            "condition": "q.block_property('unicopia:bites') == 3",
+            "die": {}
+          }
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_property('unicopia:stomped') == 0",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "unicopia_apple_pie",
+              "ambient_occlusion": true,
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_property('unicopia:stomped') == 0",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "unicopia_apple_pie_stomped",
+              "ambient_occlusion": true,
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_property('unicopia:bites') == 0",
+        "components": {
+          "minecraft:geometry": "geometry.pie_full",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              14
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              14
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_property('unicopia:bites') == 1",
+        "components": {
+          "minecraft:geometry": "geometry.pie_elbow",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              14
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              14
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_property('unicopia:bites') == 2",
+        "components": {
+          "minecraft:geometry": "geometry.pie_straight",
+          "minecraft:selection_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              7
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -7,
+              0,
+              -7
+            ],
+            "size": [
+              14,
+              5,
+              7
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_property('unicopia:bites') == 3",
+        "components": {
+          "minecraft:geometry": "geometry.pie_corner",
+          "minecraft:selection_box": {
+            "origin": [
+              0,
+              0,
+              -7
+            ],
+            "size": [
+              7,
+              5,
+              7
+            ]
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              0,
+              0,
+              -7
+            ],
+            "size": [
+              7,
+              5,
+              7
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

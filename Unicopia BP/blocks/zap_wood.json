@@ -1,0 +1,119 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "unicopia:zap_wood",
+			"properties": {
+				"unicopia:axis": [
+					0,
+					1,
+					2
+				]
+			},
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.wood"
+			}
+		},
+		"components": {
+			"tag:wood": {},
+			"tag:unicopia:zap_wood": {},
+			"tag:polearm": {},
+			"minecraft:unit_cube": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:loot": "loot_tables/blocks/zap_wood.json",
+			"minecraft:on_player_placing": {
+				"event": "unicopia:set_axis"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "unicopia_zap_log",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:on_interact": {
+				"condition": "q.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_axe')",
+				"event": "unicopia:strip"
+			}
+		},
+		"events": {
+			"unicopia:set_axis": {
+				"set_block_property": {
+					"unicopia:axis": "math.floor( query.block_face / 2 )"
+				}
+			},
+			"unicopia:strip": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": "playsound hit.wood @a ~~~"
+						},
+						"damage": {
+							"type": "durability",
+							"amount": 1,
+							"target": "item"
+						}
+					},
+					{
+						"condition": "q.block_property('unicopia:axis') == 0",
+						"run_command": {
+							"command": "setblock ~~~ unicopia:stripped_zap_wood [\"unicopia:axis\":0]"
+						}
+					},
+					{
+						"condition": "q.block_property('unicopia:axis') == 1",
+						"run_command": {
+							"command": "setblock ~~~ unicopia:stripped_zap_wood [\"unicopia:axis\":1]"
+						}
+					},
+					{
+						"condition": "q.block_property('unicopia:axis') == 2",
+						"run_command": {
+							"command": "setblock ~~~ unicopia:stripped_zap_wood [\"unicopia:axis\":2]"
+						}
+					}
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_property('unicopia:axis') == 0",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_property('unicopia:axis') == 1",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_property('unicopia:axis') == 2",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Langtanium"
+		]
+	},
+	"header": {
+		"name": "Unicopia",
+		"description": "The pony powers addon to power in your pony pony pony",
+		"min_engine_version": [
+			1,
+			20,
+			10
+		],
+		"uuid": "e92dadc7-7d02-4668-9f66-0d1a7fadbfd7",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "211b5d95-c585-416f-adb8-865a67d42a35",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "9d618eb8-b986-494d-8338-b5710bd91828",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "unicopia:race_select",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:use_duration": 9999,
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "unicopia:race_select",
+          "target": "self"
+        }
+      },
+      "minecraft:icon": {
+        "texture": "unicopia_race_select"
+      }
+    },
+    "events": {
+      "unicopia:race_select": {
+        "decrement_stack": {}
+      }
+    }
+  }
+}

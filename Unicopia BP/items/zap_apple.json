@@ -1,0 +1,36 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "unicopia:zap_apple",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.crop"
+			},
+			"minecraft:use_duration": 1.6,
+			"minecraft:food": {
+				"can_always_eat": true,
+				"nutrition": 4,
+				"saturation_modifier": "low",
+				"on_consume": {
+					"event": "unicopia:kill"
+				}
+			},
+			"minecraft:icon": {
+				"texture": "unicopia_zap_apple"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:render_offsets": "apple"
+		},
+		"events": {
+			"unicopia:kill": {
+				"damage": {
+					"amount": 30,
+					"type": "lightning"
+				}
+			}
+		}
+	}
+}

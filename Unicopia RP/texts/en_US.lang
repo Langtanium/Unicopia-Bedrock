@@ -1,0 +1,20 @@
+item.unicopia:apple_pie_slice=Apple Pie Slice
+item.unicopia:apple_pie_item=Apple Pie
+item.unicopia:apple_pie=Apple Pie
+item.unicopia:zapling_placer=Zapling
+item.unicopia:zap_apple=Zap Apple
+item.unicopia:zap_bulb=Zap Bulb
+item.unicopia:green_apple=Green Apple
+item.unicopia:sweet_apple=Sweet Apple
+item.unicopia:pineapple=Pineapple
+item.unicopia:pineapple_bite1=Pineapple Bitten
+item.unicopia:pineapple_bite2=Pineapple Bitten
+
+tile.unicopia:zap_leaves.name=Zap Leaves
+tile.unicopia:zap_log.name=Zap Log
+tile.unicopia:zap_wood.name=Zap Wood
+tile.unicopia:stripped_zap_log.name=Stripped Zap Log
+tile.unicopia:stripped_zap_wood.name=Stripped Zap Wood
+tile.unicopia:apple_pie.name=Apple Pie
+tile.unicopia:apple_pie_block.name=Apple Pie
+item.unicopia:race_select=Race Select

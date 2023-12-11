@@ -1,0 +1,40 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Unicopia",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"unicopia_zap_log": {
+			"textures": "textures/blocks/zap_log"
+		},
+		"unicopia_zap_log_top": {
+			"textures": "textures/blocks/zap_log_top"
+		},
+		"unicopia_stripped_zap_log": {
+			"textures": "textures/blocks/stripped_zap_log"
+		},
+		"unicopia_stripped_zap_log_top": {
+			"textures": "textures/blocks/stripped_zap_log_top"
+		},
+		"unicopia_apple_pie": {
+			"textures": "textures/blocks/apple_pie"
+		},
+		"unicopia_apple_pie_stomped": {
+			"textures": "textures/blocks/apple_pie_stomped"
+		},
+		"unicopia_zapling": {
+			"textures": "textures/items/zapling"
+		},
+		"unicopia_zap_leaves": {
+			"textures": [
+				{
+					"path": "textures/blocks/zap_leaves",
+					"overlay_color": "#420051"
+				}
+			]
+		},
+		"unicopia_apple_pie_block": {
+			"textures": "textures/blocks/apple_pie_block"
+		}
+	}
+}

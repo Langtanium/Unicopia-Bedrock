@@ -1,0 +1,31 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"unicopia:zap_log": {
+		"sound": "wood"
+	},
+	"unicopia:stripped_zap_log": {
+		"sound": "wood"
+	},
+	"unicopia:zap_wood": {
+		"sound": "wood"
+	},
+	"unicopia:stripped_zap_wood": {
+		"sound": "wood"
+	},
+	"unicopia:apple_pie": {
+		"sound": "cloth",
+		"textures": "unicopia_apple_pie"
+	},
+	"unicopia:zap_leaves": {
+		"sound": "stone",
+		"textures": "unicopia_zap_leaves"
+	},
+	"unicopia:apple_pie_block": {
+		"sound": "stone",
+		"textures": "unicopia_apple_pie_block"
+	}
+}

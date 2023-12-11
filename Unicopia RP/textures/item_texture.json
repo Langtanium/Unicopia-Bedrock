@@ -1,0 +1,39 @@
+{
+	"resource_pack_name": "Unicopia",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"unicopia_apple_pie_slice": {
+			"textures": "textures/items/apple_pie_slice"
+		},
+		"unicopia_apple_pie_item": {
+			"textures": "textures/items/apple_pie"
+		},
+		"unicopia_zapling": {
+			"textures": "textures/items/zapling"
+		},
+		"unicopia_zap_apple": {
+			"textures": "textures/items/zap_apple"
+		},
+		"unicopia_zap_bulb": {
+			"textures": "textures/items/zap_bulb"
+		},
+		"unicopia_green_apple": {
+			"textures": "textures/items/green_apple"
+		},
+		"unicopia_sweet_apple": {
+			"textures": "textures/items/sweet_apple"
+		},
+		"unicopia_pineapple_bite2": {
+			"textures": "textures/items/pineapple_bite2"
+		},
+		"unicopia_pineapple_bite1": {
+			"textures": "textures/items/pineapple_bite1"
+		},
+		"unicopia_pineapple": {
+			"textures": "textures/items/pineapple"
+		},
+		"unicopia_race_select": {
+			"textures": "textures/items/race_select"
+		}
+	}
+}
